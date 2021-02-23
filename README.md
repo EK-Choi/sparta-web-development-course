@@ -4,7 +4,7 @@
 <br><br>
 This course covers the essential parts of web development process from frontend to backend, allowing me to understand how web-service works.
 <br><br>
-## Index
+## Contents
 
 + [Frontend](#frontend)
   + 01_login.html
@@ -20,7 +20,7 @@ This course covers the essential parts of web development process from frontend 
 + [Homework](#homework)
   + shopping_page.html
 
-## Contents
+--------
 
 ### Frontend
 
