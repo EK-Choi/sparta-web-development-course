@@ -6,13 +6,13 @@ This course covers the essential part of web development process from frontend t
 <br><br>
 ## Index
 
-### [Frontend](frontend.)
-+ 01_login.html
-+ 02_ajaxquiz01.html
-+ 02_ajaxquiz02.html
-+ 02_ajaxquiz03.html
-+ 02_jquery.html
-+ index.html
++ [Frontend](#frontend)
+  + 01_login.html
+  + 02_ajaxquiz01.html
+  + 02_ajaxquiz02.html
+  + 02_ajaxquiz03.html
+  + 02_jquery.html
+  + index.html
 
 ### python-practice
 + webcrawling.py
@@ -22,7 +22,7 @@ This course covers the essential part of web development process from frontend t
 
 ## Contents
 
-### Frontend.
+### Frontend
 
 ### python-practice
 
