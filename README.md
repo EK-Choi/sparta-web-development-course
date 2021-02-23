@@ -6,7 +6,7 @@ This course covers the essential part of web development process from frontend t
 <br><br>
 ## Index
 
-### [Frontend](https://github.com/EK-Choi/sparta-web-development-course/blob/main/README.md#frontend-1)
+### Frontend
 + 01_login.html
 + 02_ajaxquiz01.html
 + 02_ajaxquiz02.html
@@ -14,7 +14,7 @@ This course covers the essential part of web development process from frontend t
 + 02_jquery.html
 + index.html
 
-### [python-practice](https://github.com/EK-Choi/sparta-web-development-course/blob/main/README.md#python-practice-1)
+### python-practice
 + webcrawling.py
 
 ### Homework
