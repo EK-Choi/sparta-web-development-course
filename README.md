@@ -21,5 +21,9 @@ This course covers the essential part of web development process from frontend t
 + shopping_page.html
 
 ## Contents
+
 ### Frontend
-<br>d<br>d<br>d<br>d<br>d<br>d<br>d<br>d<br>d<br>d<br>d<br>d<br>d<br>d<br>d<br>d<br>d<br>d<br>d<br>d<br>d<br>d<br>d<br>d<br>d<br>d<br>d<br>d<br>d<br>d<br>d<br>d
+
+### python-practice
+
+### Homework
