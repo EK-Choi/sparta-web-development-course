@@ -6,7 +6,7 @@ This course covers the essential part of web development process from frontend t
 <br><br>
 ## Index
 
-### [Frontend](frontend)
+### [Frontend](frontend.)
 + 01_login.html
 + 02_ajaxquiz01.html
 + 02_ajaxquiz02.html
@@ -22,7 +22,7 @@ This course covers the essential part of web development process from frontend t
 
 ## Contents
 
-### Frontend
+### Frontend.
 
 ### python-practice
 
