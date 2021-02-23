@@ -14,7 +14,7 @@ This course covers the essential part of web development process from frontend t
 + 02_jquery.html
 + index.html
 
-### python-practice
+### [python-practice](https://github.com/EK-Choi/sparta-web-development-course/blob/main/README.md#python-practice-1)
 + webcrawling.py
 
 ### Homework
