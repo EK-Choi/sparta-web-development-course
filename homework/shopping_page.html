@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+            crossorigin="anonymous"></script>
+
+    <title>order page(bootstrap paractice)</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Quicksand&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            font-family: 'Nanum Myeongjo', serif;
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        .product_pic {
+            width: 35%;
+            margin: 30px auto;
+            display: block;
+        }
+
+        .product_name {
+            width: 35%;
+            margin: 10px auto;
+        }
+
+        h1 {
+            font-size: 30px;
+        }
+
+        .price {
+            font-size: 20px;
+        }
+
+        .row.g-2 {
+            margin-bottom: 15px;
+        }
+
+        .userinfo {
+            width: 35%;
+            margin: 0 auto 20px;
+        }
+
+        h4 {
+            text-align: right;
+        }
+
+        .buttons {
+            width: 230px;
+            margin: 0 auto;
+        }
+
+        .rate{
+            font-size: 13px;
+        }
+
+    </style>
+    <script>
+        $(document).ready(function () {
+             $.ajax({
+                type: "GET",
+                url: "https://api.exchangeratesapi.io/latest?base=USD",
+                data: {},
+                success: function (response) {
+                    let currency = response['rates']['KRW']
+                    let currency_2 = currency.toFixed(2)
+                    let toKRW = currency_2*20
+
+                    $("#real_time_currency").text(currency_2)
+                    $("#inKRW").text(toKRW)
+                }
+            })
+        });
+
+        function order() {
+            // The order can't be completed when the value is over 10
+            var qnt = document.getElementById("floatingquantities").value;
+            if (qnt < 11 && qnt > 0) {
+                alert('Your order has been completed!');
+            }
+        }
+
+        function addtobag() {
+            alert('The item is added to bag');
+        }
+
+    </script>
+</head>
+
+<body>
+<!--    product image-->
+<img src="https://www.galleryhyundai.com/public/2020/04/15/23/39/20/342339f0-f6bb-45ec-9f74-e9727869282a.resize_large.jpg"
+     class="product_pic" alt="painting">
+<!--product information-->
+<div class="product_name">
+    <!--product name & pirce-->
+    <h1>Universe 5-IV-71 #200 Poster <span class="price">price: 20 USD</span></h1>
+    <p>appox. ₩ <span id="inKRW"></span> <span class="rate">(USD-KRW: <span id="real_time_currency"></span>)</span></p>
+    <!--product description-->
+    <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                    Description
+                </button>
+            </h2>
+            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                 data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body"><p>The two canvas hints duality of life - sun and moon, light and shadow,
+                    man and woman, yin and yang - embodying the contradictory yet complementary forces that drive life
+                    and universe. This is one of the largest painting that the artistes created, incarnated with the
+                    epitome of his Whan-Ki Blue which is characterised by the great range of hues of blues. The deep
+                    cobalt dots are quintessential qualities of Kim Whan-Ki’s accomplished, yet struggling creative
+                    period from 1970 to 1974. Over the past 40 years, 05-IV-71 #200 (Universe) has been in the private
+                    collection of Dr. Matthew Kim who was a friend and collector of Kim Whan-Ki’s works.</p></div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                    About the Artist
+                </button>
+            </h2>
+            <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+                 data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body"><p><span style="font-weight: bold">Kim Whanki</span> (1913-1974) is one of
+                    the most influential 20th century Korean artists.<br>Earlier works depicted traditional Joseon
+                    ceramics, Korean symbols, the moon, mountains, semi-nude women, and other natural motifs as the core
+                    subjects in geometrical shapes, simplified form and color. During his later years spent in New York
+                    from the early 1960s until his death, Kim’s work possessed a stricter formativeness through pure and
+                    basic geometric elements such as dots, lines and planes that deepened his delicate and introspective
+                    sentiments without depicting recognizable images.</p></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--user information form-->
+<form class="userinfo"
+      action="https://www.assignmentpoint.com/wp-content/uploads/2019/10/Thanks-for-purchase-of-software.jpg">
+    <!--    first name&last name grid-->
+    <div class="row g-2">
+        <div class="col-md">
+            <div class="form-floating">
+                <input type="text" class="form-control" id="floatingfisrtname" placeholder="first name"
+                       required="required">
+                <label for="floatingfisrtname">Frist Name</label>
+            </div>
+        </div>
+        <div class="col-md">
+            <div class="form-floating">
+                <input type="text" class="form-control" id="floatinglastname" placeholder="last name"
+                       required="required">
+                <label for="floatinglastname">Last Name</label>
+            </div>
+        </div>
+    </div>
+    <!--quantities-->
+    <div class="form-floating mb-3">
+        <input type="number" class="form-control" id="floatingquantities" placeholder="select quantities" min="1"
+               max="10" required="required">
+        <label for="floatingquantities">Quantities (max: 10)</label>
+    </div>
+    <!--    address-->
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="floatingaddress" placeholder="address">
+        <label for="floatingaddress" required="required">Address</label>
+    </div>
+    <!--    phone number-->
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="floatingnumber" placeholder="phone number">
+        <label for="floatingnumber" required="required">Phone Number</label>
+    </div>
+    <!--    buttons-->
+    <div class="buttons">
+        <button onclick="addtobag()" type="button" class="btn btn-outline-secondary">ADD TO BAG</button>
+        <button onclick="order()" type="submit" class="btn btn-outline-secondary">BUY NOW</button>
+    </div>
+</form>
+
+</body>
+</html>
