@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+
+    <title>bootstrap paractice</title>
+
+    <style>
+        .wrap {
+            width: 900px;
+            margin: 10px auto;
+        }
+
+        .cmnts {
+            color: blue;
+            font-weight: bold;
+        }
+
+        .posting-box {
+            width: 500px;
+            height: 340px;
+            padding: 50px;
+            margin: 20px auto;
+
+            border: 3px black solid;
+            border-radius: 5px;
+
+            display: none;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function () {
+            $('#cards-box').empty()
+            listing();
+        });
+
+        function listing() {
+             $.ajax({
+                type: "GET",
+                url: "http://spartacodingclub.shop/post",
+                data: {},
+                success: function (response) {
+                    let rows = response['articles']
+                    for(let i= 0; i < rows.length; i++){
+                        let comment = rows[i]['comment']
+                        let desc = rows[i]['desc']
+                        let image = rows[i]['image']
+                        let title = rows[i]['title']
+                        let url = rows[i]['url']
+
+                        let temp_html =
+                            `<div class="card">
+                                <img class="card-img-top"
+                                     src=${image}
+                                     alt="Card image cap">
+                                <div class="card-body">
+                                    <a href=${url}<h5 class="card-title">${title}</h5></a>
+                                    <p class="card-text">${desc}</p>
+                                    <p class="cmnts">${comment}</p>
+                                </div>
+                            </div> `
+                        $('#cards-box').append(temp_html)
+
+                    }
+
+                }
+            })
+        }
+
+        function openclose() {
+            let status = $('#post-box').css('display');
+            if (status == 'block') {
+                $('#post-box').hide();
+                $('#btn-posting-box').text('Open posting box');
+            } else {
+                $('#post-box').show();
+                $('#btn-posting-box').text('Close posting box');
+            }
+        }
+    </script>
+</head>
+
+<body>
+<div class="wrap">
+    <div class="jumbotron">
+        <h1 class="display-4">My Link Memo!</h1>
+        <p class="lead">This is Link Memo where you can save important links and check out later.</p>
+        <hr class="my-4">
+        <p class="lead">
+            <a onclick="openclose()" id="btn-posting-box" class="btn btn-primary btn-lg" href="#" role="button">Open
+                posting box</a>
+        </p>
+    </div>
+    <div class="posting-box" id="post-box">
+        <div class="mb-3">
+            <label for="article-url" class="form-label">Article URL</label>
+            <input type="url" class="form-control" id="article-url" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="comment" class="form-label">Comment</label>
+            <textarea class="form-control" id="comment" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+    <div class="card-columns" id="cards-box">
+        <div class="card">
+            <img class="card-img-top"
+                 src="https://cdn.shopify.com/s/files/1/0073/8148/3605/articles/Claude-Monet-San-Giorgio-Maggiore-at-Dusk_2048x.jpg?v=1556745106"
+                 alt="Card image cap">
+            <div class="card-body">
+                <a href="https://www.google.com/"><h5 class="card-title">title</h5></a>
+                <p class="card-text">article</p>
+                <p class="cmnts">comments</p>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top"
+                 src="https://cdn.shopify.com/s/files/1/0073/8148/3605/articles/Claude-Monet-San-Giorgio-Maggiore-at-Dusk_2048x.jpg?v=1556745106"
+                 alt="Card image cap">
+            <div class="card-body">
+                <a href="https://www.google.com/"><h5 class="card-title">title</h5></a>
+                <p class="card-text">article</p>
+                <p class="cmnts">comments</p>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top"
+                 src="https://cdn.shopify.com/s/files/1/0073/8148/3605/articles/Claude-Monet-San-Giorgio-Maggiore-at-Dusk_2048x.jpg?v=1556745106"
+                 alt="Card image cap">
+            <div class="card-body">
+                <a href="https://www.google.com/"><h5 class="card-title">title</h5></a>
+                <p class="card-text">article</p>
+                <p class="cmnts">comments</p>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top"
+                 src="https://cdn.shopify.com/s/files/1/0073/8148/3605/articles/Claude-Monet-San-Giorgio-Maggiore-at-Dusk_2048x.jpg?v=1556745106"
+                 alt="Card image cap">
+            <div class="card-body">
+                <a href="https://www.google.com/"><h5 class="card-title">title</h5></a>
+                <p class="card-text">article</p>
+                <p class="cmnts">comments</p>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top"
+                 src="https://cdn.shopify.com/s/files/1/0073/8148/3605/articles/Claude-Monet-San-Giorgio-Maggiore-at-Dusk_2048x.jpg?v=1556745106"
+                 alt="Card image cap">
+            <div class="card-body">
+                <a href="https://www.google.com/"><h5 class="card-title">title</h5></a>
+                <p class="card-text">article</p>
+                <p class="cmnts">comments</p>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top"
+                 src="https://cdn.shopify.com/s/files/1/0073/8148/3605/articles/Claude-Monet-San-Giorgio-Maggiore-at-Dusk_2048x.jpg?v=1556745106"
+                 alt="Card image cap">
+            <div class="card-body">
+                <a href="https://www.google.com/"><h5 class="card-title">title</h5></a>
+                <p class="card-text">article</p>
+                <p class="cmnts">comments</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
