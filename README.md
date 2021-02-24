@@ -16,6 +16,8 @@ This course covers the essential parts of web development process from frontend 
 
 + [python-practice](#python-practice)
   + webcrawling.py
+  + dbquiz.py
+  + genie-crawling.py
 
 + [Homework](#homework)
   + shopping_page.html
