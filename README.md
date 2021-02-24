@@ -22,8 +22,8 @@ This course covers the essential parts of web development process from frontend 
 
 --------
 
-### [Frontend](#frontend)
+### [Frontend](frontend)
 
-### Python practice
+### [Python practice](python-practice)
 
-### Homework
+### [Homework](homework)
