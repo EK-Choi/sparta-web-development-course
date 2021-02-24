@@ -20,6 +20,10 @@ This course covers the essential parts of web development process from frontend 
   + genie-crawling.py
 
 + [projects](#projects)
+  + alonememo
+  + bookreview
+  + moviestar
+  + practice
 
 + [Homework](#homework)
   + shopping_page.html
@@ -30,6 +34,6 @@ This course covers the essential parts of web development process from frontend 
 
 ### [Python practice](python-practice)
 
-### [projects]()
+### [projects](projects)
 
 ### [Homework](homework)
