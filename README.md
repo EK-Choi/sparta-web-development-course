@@ -27,6 +27,7 @@ This course covers the essential parts of web development process from frontend 
 
 + [Homework](#homework)
   + shopping_page.html
+  + shopping_page with orderlist
 
 --------
 
